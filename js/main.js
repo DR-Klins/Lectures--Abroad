@@ -117,25 +117,23 @@ jQuery(document).ready(function( $ ) {
   });
 
 
-  //Google Map
-  var get_latitude = $('#google-map').data('latitude');
-  var get_longitude = $('#google-map').data('longitude');
+  //video playback off
+  document.addEventListener('DOMContentLoaded', function () {
+    const video = document.getElementById('video-background');
 
-  function initialize_google_map() {
-    var myLatlng = new google.maps.LatLng(get_latitude, get_longitude);
-    var mapOptions = {
-      zoom: 14,
-      scrollwheel: false,
-      center: myLatlng
-    };
-    var map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map
+    // Disable play/pause on click
+    video.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent any default behavior
+        video.pause(); // Pause video if it was clicked
     });
-  }
-  google.maps.event.addDomListener(window, 'load', initialize_google_map);
+
+    // Disable all interactions with the video
+    video.setAttribute('controls', false); // Ensure controls are not present
+});
+
 
 // custom code
 
 });
+
+
