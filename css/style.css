@@ -149,6 +149,23 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (max-width: 768px) {
+  #txt-style1, #txt-style2 {
+    font-size: 20px; /* Adjusted size for smaller screens */
+    float: none;
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #txt-style1, #txt-style2 {
+    font-size: 16px; /* Further reduction for extra small screens */
+    float: none;
+    text-align: center;
+    padding-left: 0;
+  }
+}
 #header.header-fixed {
   background: rgba(52, 59, 64, 0.9);
   padding: 20px 0;
@@ -159,6 +176,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 50px;  
   height: 45px;  /
 }
+
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -180,6 +199,7 @@ h1, h2, h3, h4, h5, h6 {
   height: auto;
   z-index: -1;
   background-size: cover;
+  pointer-events: none;
 }
 
 #hero .hero-container {
@@ -950,6 +970,12 @@ h4 {
 @media (max-width: 768px) {
   .testimonials-slider {
     flex-direction: column;
+    align-items: center; /* Center align the items */
+  }
+
+  .testimonial-item {
+    margin: 20px 0; /* Add vertical margin for spacing between items */
+    max-width: 90%; /* Make sure it takes 90% of the screen width */
   }
 }
 
